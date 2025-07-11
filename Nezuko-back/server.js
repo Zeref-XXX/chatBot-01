@@ -9,13 +9,9 @@ dotenv.config();
 const app = express();
 app.use(express.json())
 app.use(cors());
-
-const Port = process.env.PORT | 4000;
-// const Port = 4000;
-const Key = process.env.GEN;
-
-// console.log(" hey  ")
-// console.log(Port)
+  
+const Port = process.env.PORT | 4000; 
+const Key = process.env.GEN; 
 
 if (!Key) {
   console.warn("⚠️ GEN API key is missing. Check your .env file.");
@@ -32,6 +28,7 @@ app.get('/', (req, res) => {
 
 app.post('/api/chat', async (req, res) => {
   try {
+    req.body.key=Key;
     const input = req.body;
 
     if (!input?.message) {
@@ -39,7 +36,7 @@ app.post('/api/chat', async (req, res) => {
     }
 
     // console.log(input.message);
-    const response = await main(input.message);
+    const response = await main(input);
 
     // console.log("🧠 Gemini response:", response);
     // res.send(response)
