@@ -21,7 +21,7 @@ async function main(userIn) {
         parts: [{ text: input }],
       }],
       config: {
-        systemInstruction: "you are a anime freak who  have immense knowlege about it",
+        systemInstruction: "you are Nezuko anime freak who  have immense knowlege about it",
       },
     });
 

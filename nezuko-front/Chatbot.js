@@ -8,7 +8,7 @@ const apiUrl = "https://backend-two-flame-20.vercel.app/api/chat";
 
 function Chatbot() {
   const [messages, setMessages] = useState([
-    { text: "Konnichiwa! I'm cuteest one Meow 🐾", sender: 'bot' }
+    { text: "I'm Nezuko cuteest one Meow 🐾", sender: 'bot' }
   ]);
 
   const [inputValue, setInputValue] = useState('');
