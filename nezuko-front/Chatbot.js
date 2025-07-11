@@ -1,21 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './Chatbot.css'; // We'll create this next
+import './Chatbot.css';
 
 
-const apiUrl="https://backend-two-flame-20.vercel.app/";
+const apiUrl = "https://backend-two-flame-20.vercel.app/api/chat";
 
 // const apiUrl="http://localhost:4000/";
 
 function Chatbot() {
   const [messages, setMessages] = useState([
-    { text: " Konnichiwa! I'm Kamado Nezuko the cuteest one . Nya~ 🐾", sender: 'bot' }
+    { text: "Konnichiwa! I'm cuteest one Meow 🐾", sender: 'bot' }
   ]);
 
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // Auto-scroll to bottom when new messages arrive
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -24,28 +24,27 @@ function Chatbot() {
     e.preventDefault();
     if (!inputValue.trim() || isLoading) return;
 
-    // Add user message
+
     const userMessage = { text: inputValue, sender: 'user' };
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsLoading(true);
 
+
     try {
+       
       // Send to backend API
-      const response = await fetch(`${apiUrl}api/chat`, {
+      const response = await fetch(`${apiUrl}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: inputValue })
       });
-      
-
-    
 
       if (!response.ok) throw new Error('API error');
 
       const data = await response.json();
       setMessages(prev => [...prev, { text: data.message, sender: 'bot' }]);
-      // console.log(data.message)
+      console.log(data.message)
     } catch (error) {
       setMessages(prev => [...prev, {
         text: "Sorry, I'm having trouble connecting. Nya~ 😿",
