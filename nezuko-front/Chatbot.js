@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Chatbot.css'; // We'll create this next
 
-// const apiUrl="https://chat-bot-01.vercel.app/";
 
+const apiUrl="https://backend-two-flame-20.vercel.app/";
 
-const apiUrl="http://localhost:4000/";
+// const apiUrl="http://localhost:4000/";
 
 function Chatbot() {
   const [messages, setMessages] = useState([
