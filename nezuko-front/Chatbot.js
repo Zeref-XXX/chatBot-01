@@ -45,7 +45,8 @@ function Chatbot() {
       // console.log(data.message)
     } catch (error) {
       setMessages(prev => [...prev, {
-        text: "Sorry, I'm having trouble connecting. Nya~ 😿",
+        // text: "Sorry, I'm having trouble connecting. Nya~ 😿",
+        text : error.code.message,
         sender: 'bot'
       }]);
     } finally {
