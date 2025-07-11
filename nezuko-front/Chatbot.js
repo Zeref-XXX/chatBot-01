@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Chatbot.css'; // We'll create this next
 
+const apiUrl="https://chat-bot-01.vercel.app/";
+
 function Chatbot() {
   const [messages, setMessages] = useState([
     { text: " Konnichiwa! I'm Kamado Nezuko the cuteest one . Nya~ 🐾", sender: 'bot' }
@@ -27,7 +29,7 @@ function Chatbot() {
 
     try {
       // Send to backend API
-      const response = await fetch('http://localhost:4000/api/chat', {
+      const response = await fetch(`${apiUrl}api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: inputValue })
