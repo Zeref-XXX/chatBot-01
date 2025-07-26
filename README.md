@@ -1,6 +1,4 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
-
-# Nezuko Chat Bot v0.1 🐱
+ # Nezuko Chat Bot v0.1 🐱
 
 A simple, anime-themed chatbot inspired by Nezuko from Demon Slayer. This project features a React frontend with an Express.js backend powered by Google’s Gemini AI to provide responses in Nezuko’s characteristic innocent and knowledgeable style about anime.
 
