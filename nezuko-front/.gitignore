@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+
+# Parcel build output
+dist/
+
+# Optional: Parcel cache (improves build speed, no need to commit)
+.cache/
+
+# Environment variables
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
